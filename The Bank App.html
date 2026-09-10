@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Bank</title>
+    <!-- Linked CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="app-card">
+        <!-- Top Header -->
+        <div class="header">
+            <h1>Great Bank</h1>
+            <p>Welcome back, Alex</p>
+
+            <div class="balance-card">
+                <span>Available Balance</span>
+                <div class="balance-amount" id="balance">$2,450.00</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+
+            <!-- Quick Action Form -->
+            <div class="input-group">
+                <label for="amount">Enter Amount ($)</label>
+                <input type="number" id="amount" placeholder="0.00" min="1" step="any">
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-deposit" onclick="handleDeposit()">Deposit</button>
+                <button class="btn btn-withdraw" onclick="handleWithdraw()">Pay / Send</button>
+            </div>
+
+            <!-- Activity Section -->
+            <div class="section-title">Recent Activity</div>
+            <ul class="transactions" id="transaction-list">
+                <li class="transaction-item">
+                    <span>Initial Deposit</span>
+                    <span class="amount-plus">+$2,450.00</span>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
