@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Great Bank</title>
-    <!-- Linked CSS file -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Bank style.css">
 </head>
 
 <body>
 
     <div class="app-card">
-        <!-- Top Header -->
+        <!-- Header -->
         <div class="header">
+            <span class="brand-badge">Official App</span>
             <h1>Great Bank</h1>
             <p>Welcome back, Alex</p>
 
@@ -28,8 +28,11 @@
 
             <!-- Quick Action Form -->
             <div class="input-group">
-                <label for="amount">Enter Amount ($)</label>
-                <input type="number" id="amount" placeholder="0.00" min="1" step="any">
+                <label for="amount">Enter Amount</label>
+                <div class="input-wrapper">
+                    <span class="currency-symbol">$</span>
+                    <input type="number" id="amount" placeholder="0.00" min="1" step="any">
+                </div>
             </div>
 
             <div class="button-group">
@@ -41,14 +44,17 @@
             <div class="section-title">Recent Activity</div>
             <ul class="transactions" id="transaction-list">
                 <li class="transaction-item">
-                    <span>Initial Deposit</span>
+                    <div class="transaction-info">
+                        <span class="transaction-title">Initial Deposit</span>
+                        <span class="transaction-date">Today</span>
+                    </div>
                     <span class="amount-plus">+$2,450.00</span>
                 </li>
             </ul>
 
         </div>
     </div>
-
+<script src="bank script.js"></script>
 </body>
 
 </html>
