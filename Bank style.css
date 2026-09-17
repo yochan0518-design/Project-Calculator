@@ -1,22 +1,34 @@
+/* Import Modern Google Font (Inter) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 :root {
     --primary: #10b981;
     --primary-dark: #059669;
-    --bg: #f3f4f6;
+    --primary-gradient: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    --bg: #f8fafc;
     --card-bg: #ffffff;
-    --text: #1f2937;
-    --text-muted: #6b7280;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --danger: #ef4444;
+    --danger-dark: #dc2626;
+    --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
     background-color: var(--bg);
-    color: var(--text);
+    background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+    background-size: 24px 24px;
+    color: var(--text-main);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,109 +40,160 @@ body {
     background: var(--card-bg);
     width: 100%;
     max-width: 420px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(226, 232, 240, 0.8);
     overflow: hidden;
+    transition: transform 0.2s ease;
 }
 
-/* Header */
+/* Header Section */
 .header {
-    background: linear-gradient(135deg, #059669, #10b981);
+    background: var(--primary-gradient);
     color: white;
-    padding: 25px 20px;
+    padding: 28px 24px;
     text-align: center;
 }
 
+.brand-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
 .header h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 5px;
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
 }
 
 .header p {
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     opacity: 0.9;
+    margin-top: 4px;
+    font-weight: 400;
 }
 
 /* Account Balance Card */
 .balance-card {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
-    margin-top: 15px;
-    padding: 15px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .balance-card span {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    opacity: 0.9;
 }
 
 .balance-amount {
-    font-size: 2.2rem;
-    font-weight: bold;
-    margin-top: 5px;
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-top: 4px;
 }
 
-/* App Body */
+/* App Body Content */
 .content {
-    padding: 20px;
+    padding: 24px;
 }
 
 .section-title {
-    font-size: 1rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     color: var(--text-muted);
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
-/* Actions */
+/* Form Styling */
 .input-group {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
 .input-group label {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 600;
     color: var(--text-muted);
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.currency-symbol {
+    position: absolute;
+    left: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
 }
 
 .input-group input {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    font-size: 1rem;
+    padding: 12px 14px 12px 30px;
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
     outline: none;
-    transition: border-color 0.2s;
+    transition: all 0.2s ease;
+    background-color: #f8fafc;
 }
 
 .input-group input:focus {
     border-color: var(--primary);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
 }
 
+/* Buttons */
 .button-group {
     display: flex;
-    gap: 10px;
-    margin-bottom: 25px;
+    gap: 12px;
+    margin-bottom: 28px;
 }
 
 .btn {
     flex: 1;
-    padding: 12px;
+    padding: 12px 16px;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.2s ease;
+}
+
+.btn:active {
+    transform: scale(0.98);
 }
 
 .btn-deposit {
     background-color: var(--primary);
     color: white;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
 }
 
 .btn-deposit:hover {
@@ -138,15 +201,16 @@ body {
 }
 
 .btn-withdraw {
-    background-color: #ef4444;
+    background-color: var(--danger);
     color: white;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
 }
 
 .btn-withdraw:hover {
-    background-color: #dc2626;
+    background-color: var(--danger-dark);
 }
 
-/* Recent Transactions List */
+/* Transactions List */
 .transactions {
     list-style: none;
 }
@@ -154,21 +218,38 @@ body {
 .transaction-item {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #f3f4f6;
-    font-size: 0.9rem;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.925rem;
 }
 
 .transaction-item:last-child {
     border-bottom: none;
 }
 
+.transaction-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.transaction-title {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.transaction-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
 .amount-plus {
     color: var(--primary);
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .amount-minus {
-    color: #ef4444;
-    font-weight: bold;
+    color: var(--danger);
+    font-weight: 700;
 }
